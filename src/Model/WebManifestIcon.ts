@@ -1,7 +1,7 @@
-export default class WebManifestIcon {
-  public src?: string;
+export default interface WebManifestIcon {
+  src?: string;
 
-  public sizes?: string;
+  sizes?: string;
 
-  public type?: string;
+  type?: string;
 }

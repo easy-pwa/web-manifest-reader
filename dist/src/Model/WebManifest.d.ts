@@ -1,14 +1,15 @@
 import WebManifestIcon from './WebManifestIcon';
-export default class WebManifest {
+export default interface WebManifest {
     name?: string;
-    shortName?: string;
-    startUrl?: string;
+    short_name?: string;
+    start_url?: string;
     display?: string;
     description?: string;
     dir?: string;
     lang?: string;
     orientation?: string;
     scope?: string;
-    themeColor?: string;
+    theme_color?: string;
     icons?: WebManifestIcon[];
+    [key: string]: any;
 }

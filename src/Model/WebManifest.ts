@@ -1,25 +1,27 @@
 import WebManifestIcon from './WebManifestIcon';
 
-export default class WebManifest {
-  public name?: string;
+export default interface WebManifest {
+  name?: string;
 
-  public shortName?: string;
+  short_name?: string;
 
-  public startUrl?: string;
+  start_url?: string;
 
-  public display?: string;
+  display?: string;
 
-  public description?: string;
+  description?: string;
 
-  public dir?: string;
+  dir?: string;
 
-  public lang?: string;
+  lang?: string;
 
-  public orientation?: string;
+  orientation?: string;
 
-  public scope?: string;
+  scope?: string;
 
-  public themeColor?: string;
+  theme_color?: string;
 
-  public icons?: WebManifestIcon[];
+  icons?: WebManifestIcon[];
+
+  [key: string]: any;
 }
