@@ -4,6 +4,4 @@ export default class Reader {
     read(): Promise<WebManifest | null>;
     private getManifestContent;
     private getManifestPath;
-    private deserialize;
-    private getStringProperty;
 }
