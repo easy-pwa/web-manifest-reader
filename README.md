@@ -1,4 +1,7 @@
 # web-manifest-reader
+![npm](https://img.shields.io/npm/v/web-manifest-reader?style=flat-square)
+![GitHub file size in bytes](https://img.shields.io/github/size/easy-pwa/web-manifest-reader/dist/index.js?style=flat-square)
+![npm](https://img.shields.io/npm/dt/web-manifest-reader?style=flat-square)
 
 This package reads manifest referenced in the current web page.
 
