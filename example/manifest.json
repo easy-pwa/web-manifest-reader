@@ -1,0 +1,10 @@
+{
+  "name": "Progressive Web App",
+  "short_name": "PWA",
+  "description": "A progressive web app to test.",
+  "start_url": "./",
+  "display": "standalone",
+  "lang": "fr",
+  "background_color": "#0099ff",
+  "theme_color": "#0099ff"
+}

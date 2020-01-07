@@ -2,7 +2,8 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "./dist/",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
     "moduleResolution": "node",
     "module": "CommonJS",
     "target": "es5",

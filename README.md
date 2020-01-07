@@ -26,17 +26,40 @@ This package reads manifest referenced in the current web page.
 
 ## Get started
 
+#### With npm
 ```
 npm install web-manifest-reader
 ```
 
+#### Otherwise
+``` html
+<script async src="https://cdn.jsdelivr.net/npm/web-manifest-reader@VERSION/index.js"
+```
+
+
 Then, you can use it easly.
 
+#### With ES6 module
 ```` javascript
-import manifest from 'web-manifest-reader';
+import Manifest from 'web-manifest-reader';
 
-manifest.read().then(function(manifestData) {
-    console.log('I want the name: '+manifestData.name);
+Manifest.read().then(function(manifestData) {
+    if (!manifestData) {
+        console.log('an error occured');
+    } else {
+        console.log('I want the name: '+manifestData.name);
+    }
+});
+````
+
+#### Without ES6 module
+```` javascript
+WebManifestReader.read(function(manifestData) {
+    if (!manifestData) {
+        console.log('an error occured');
+    } else {
+        console.log('I want the name: '+manifestData.name);
+    }
 });
 ````
 

@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -9,7 +9,8 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    library: 'WebManifestReader'
   },
   resolve: {
     extensions: ['.ts', '.d.ts'],
@@ -31,6 +32,7 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
 };
