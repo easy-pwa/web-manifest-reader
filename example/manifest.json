@@ -1,0 +1,10 @@
+{
+  "name": "Web Manifest Reader",
+  "short_name": "WMR",
+  "description": "A web manifest reader",
+  "start_url": "./",
+  "display": "standalone",
+  "lang": "fr",
+  "background_color": "#0099ff",
+  "theme_color": "#0099ff"
+}
