@@ -12,7 +12,7 @@ export default class Reader {
      * Read with a callback
      * @param callback callback to execute when manifest is read. Manifest content if it's a success, null otherwise.
      */
-    readCallback(callback: (data: WebManifest | null) => void): void;
+    readCallback(callback: (data: WebManifest | null, error: Error | null) => void): void;
     /**
      * Read with a promise
      * @return A promise with the manifest content or null if an error has occurred.

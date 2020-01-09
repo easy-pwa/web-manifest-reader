@@ -12,11 +12,20 @@
 
 <script>
   window.addEventListener('load', function() {
-    /*WebManifestReader.read().then( function(data) {
-      console.log(data);
-    });*/
-    WebManifestReader.readCallback(function(data) {
-      console.log('la', data);
+    /*
+    WebManifestReader.read().then(data => {
+      console.log('Manifest content', data);
+    }).catch(error => {
+        console.log('An error occurred', error.message);
+    });
+    */
+    WebManifestReader.readCallback(function(data, error) {
+        if (error) {
+            console.log('An error occurred', error.message);
+            return;
+        }
+
+      console.log('Manifest content', data);
     });
   });
 </script>

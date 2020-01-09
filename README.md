@@ -43,23 +43,22 @@ Then, you can use it easly.
 ```` javascript
 import Manifest from 'web-manifest-reader';
 
-Manifest.read().then(function(manifestData) {
-    if (!manifestData) {
-        console.log('an error occured');
-    } else {
-        console.log('I want the name: '+manifestData.name);
-    }
+Manifest.read().then(manifestData => {
+    console.log('I want the name: '+manifestData.name);
+}).catch(error => {
+    console.log('an error occured', error.message);
 });
 ````
 
 #### Without ES6 module
 ```` javascript
-WebManifestReader.read(function(manifestData) {
-    if (!manifestData) {
-        console.log('an error occured');
-    } else {
-        console.log('I want the name: '+manifestData.name);
+WebManifestReader.readCallback(function(manifestData, error) {
+    if (error) {
+        console.log('An error occurred', error.message);
+        return;
     }
+
+    console.log('I want the name: '+manifestData.name);
 });
 ````
 

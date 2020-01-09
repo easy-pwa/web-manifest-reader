@@ -1,7 +1,7 @@
 {
-  "name": "Progressive Web App",
-  "short_name": "PWA",
-  "description": "A progressive web app to test.",
+  "name": "Web Manifest Reader",
+  "short_name": "WMR",
+  "description": "A web manifest reader",
   "start_url": "./",
   "display": "standalone",
   "lang": "fr",

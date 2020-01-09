@@ -22,13 +22,13 @@ export default class Reader {
    * Read with a callback
    * @param callback callback to execute when manifest is read. Manifest content if it's a success, null otherwise.
    */
-  public readCallback(callback: (data: WebManifest | null) => void): void {
+  public readCallback(callback: (data: WebManifest | null, error: Error | null) => void): void {
     this.read()
       .then(data => {
-        callback(data);
+        callback(data, null);
       })
-      .catch(() => {
-        callback(null);
+      .catch(e => {
+        callback(null, e);
       });
   }
 
@@ -48,13 +48,10 @@ export default class Reader {
       throw new Error('No manifest declaration found.');
     }
 
-    try {
-      const manifestData = await this.getManifestContent(manifestPath);
-      this.storeContentInCache(manifestData);
-      return manifestData;
-    } catch (e) {}
+    const manifestData = await this.getManifestContent(manifestPath);
+    this.storeContentInCache(manifestData);
 
-    return null;
+    return manifestData;
   }
 
   /**
@@ -63,6 +60,10 @@ export default class Reader {
    */
   private async getManifestContent(manifestPath: string): Promise<WebManifest> {
     const response = await fetch(manifestPath);
+    if (response.status !== 200) {
+      throw new Error('Impossible to get the manifest content.');
+    }
+
     return await response.json();
   }
 
