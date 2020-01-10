@@ -10,7 +10,8 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'WebManifestReader'
+    library: 'WebManifestReader',
+    libraryExport: 'default'
   },
   resolve: {
     extensions: ['.ts', '.d.ts'],
