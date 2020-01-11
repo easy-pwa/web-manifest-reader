@@ -1,7 +1,7 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = {
+const config = {
   mode: 'production',
   entry: {
     'index': './src/index.ts',
@@ -10,8 +10,6 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'WebManifestReader',
-    libraryExport: 'default'
   },
   resolve: {
     extensions: ['.ts', '.d.ts'],
@@ -37,3 +35,16 @@ module.exports = {
     minimizer: [new TerserPlugin()],
   },
 };
+
+const moduleConfig = Object.assign({}, config);
+
+const commonConfig = Object.assign({}, config, {
+  output: {
+    filename: 'lib.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'WebManifestReader',
+    libraryExport: 'default',
+  }
+});
+
+module.exports = [moduleConfig, commonConfig];
