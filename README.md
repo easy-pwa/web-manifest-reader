@@ -33,7 +33,7 @@ npm install web-manifest-reader
 
 #### Otherwise
 ``` html
-<script async src="https://cdn.jsdelivr.net/npm/web-manifest-reader@VERSION/index.js"
+<script async src="https://cdn.jsdelivr.net/npm/web-manifest-reader@VERSION/lib.js"
 ```
 
 
