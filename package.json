@@ -34,7 +34,7 @@
     "@babel/preset-typescript": "^7.10.1",
     "@types/node": "^12.12.47",
     "babel-loader": "^8.1.0",
-    "prettier": "^1.19.1",
+    "prettier": "^3.8.1",
     "terser-webpack-plugin": "^5.3.16",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3",
