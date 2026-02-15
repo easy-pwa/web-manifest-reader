@@ -24,10 +24,10 @@ export default class Reader {
    */
   public readCallback(callback: (data: WebManifest | null, error: Error | null) => void): void {
     this.read()
-      .then(data => {
+      .then((data) => {
         callback(data, null);
       })
-      .catch(e => {
+      .catch((e) => {
         callback(null, e);
       });
   }
